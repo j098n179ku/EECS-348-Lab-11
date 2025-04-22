@@ -1,0 +1,3 @@
+#modifyabletext { /* initializes ID */
+    border: 5px solid black; /* makes a 5 pixel border around text */
+}

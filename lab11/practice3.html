@@ -1,0 +1,39 @@
+<head>
+    <!-- Title -->
+    <h1>Practice 3</h1>
+</head>
+<body>
+<script>
+    function checkpass() //defines function for checking the password
+    {
+        let userprompt = document.getElementById("userprompt"); //grabs the userprompt from the html to be used in javascript
+        let password = document.getElementById("password").value; //grabs the password from the html to be used in javascript
+        let login = document.getElementById("login").value; //grabs the login from the html to be used in javascript
+        if (password.length < 8) //if the length of the password is less than 8
+        {
+            userprompt.textContent = "Password needs to be at least 8 characters long"; //lets user know the password needs to be 8 characters long
+            return; //return to try again
+        }
+
+        else if (password !== login) //if the password and the login info are not the same
+        {
+            userprompt.textContent = "Password don't match. try again"; //notify user password isnt correct
+            return; //return to try again
+        }
+        
+        else //otherwise, if both are 8 or more characters and the password matches
+        {
+            userprompt.textContent = "Login Accepted!"; //let the user know that the password was accepted
+        }
+        
+    }
+</script>
+
+<html>
+    <p id = "userprompt"> Enter a password, then enter again to verify the password</p> <!-- makes a modifyable prompt that changes depending on the users input -->
+    
+    <input type="password" id="password"> <!-- First user input for a password -->
+    <input type="password" id="login"> <!-- second user input to verify the password -->
+    <button onclick="checkpass()">Login</button> <!-- makes a button that starts the checkpass function -->
+</body>
+</html>

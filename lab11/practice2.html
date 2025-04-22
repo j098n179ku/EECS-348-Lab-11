@@ -1,0 +1,38 @@
+<html>
+<!-- Imports the practice2.css file into this file -->
+<link rel="stylesheet" type="text/css" href ="practice2.css" />
+<script>
+
+
+function colorchange() //defines the colorchange function
+{
+    let r = document.getElementById("r").value; //makes the r variable, and pulls the information from the r id in html
+    let g = document.getElementById("g").value; //makes the g variable, and pulls the information from the g id in html
+    let b = document.getElementById("b").value;//makes the b variable, and pulls the information from the b id in html
+    let modtext = document.getElementById("modifyabletext"); //makes the modtext variable, and pulls the information from the modifyabletext id in html
+
+    modtext.style.borderColor = `rgb(${r}, ${g}, ${b})`; //this changes the modifyable text's border color
+
+
+
+}
+function borderchange() //this changes the borderchange function
+{
+    let borderwidth = document.getElementById("borderwidth").value; //makes the borderwidth variable, and pulls the values of borderwidth from the borderwidth ID, which is a user input
+    let modtext = document.getElementById("modifyabletext"); //makes the g variable, and pulls the information from the modifyabletext id in html
+    modtext.style.borderWidth = `${borderwidth}px`; //borderwidth is the user input, it changes the modifyable texts border size
+
+}
+</script>
+
+<p id = "modifyabletext" >Enter some RGB integer values in the text prompts! or use the fourth box to change the width. Make sure all 3 boxes are filled to change the color</p> <!-- Prompt for user to explain how to use the site -->
+<p>Red</p> <input type="number" id="r"> <!-- Red input that is typed in by user -->
+<p>green</p><input type="number" id="g"> <!-- Blue input that is typed in by user -->
+<p>Blue</p><input type="number" id="b"> <!-- Green input that is typed in by user -->
+<button onclick="colorchange()">Change Border Color!</button> <!-- calls the colorchange function -->
+
+<p><br /></p> <!-- just places a gap for better readability -->
+<input type="number" id="borderwidth"> <!-- borderwidth changing input as a number -->
+<button onclick="borderchange()">Change border width!</button> <!-- calls the borderchange function -->
+
+</html>
